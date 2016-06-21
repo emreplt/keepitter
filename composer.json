@@ -1,0 +1,13 @@
+{
+    "name": "emreplt/keepitter",
+    "description": "keep tweets forever",
+    "require": {
+        "pug-php/pug": "^1.11"
+    },
+    "authors": [
+        {
+            "name": "Emre Polat",
+            "email": "emreplt@gmail.com"
+        }
+    ]
+}
