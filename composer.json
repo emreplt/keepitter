@@ -2,7 +2,9 @@
     "name": "emreplt/keepitter",
     "description": "keep tweets forever",
     "require": {
-        "pug-php/pug": "^1.11"
+        "pug-php/pug": "^1.11",
+        "php": "^7.1@alpha",
+        "fzaninotto/faker": "^1.6"
     },
     "authors": [
         {

@@ -4,21 +4,69 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0995b1e13c401c23eec07830c54331c0",
-    "content-hash": "e9e38bf5a15955ffd2fe63245993b4e7",
+    "hash": "0d5f84c05b4c08b93515a458fe1464ab",
+    "content-hash": "6f9025ced98b816a1cfaf4e48b6a36f3",
     "packages": [
         {
-            "name": "pug-php/pug",
-            "version": "1.11.0",
+            "name": "fzaninotto/faker",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pug-php/pug.git",
-                "reference": "b550970ce786f532c8cba3414e24aae8ce19f31d"
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pug-php/pug/zipball/b550970ce786f532c8cba3414e24aae8ce19f31d",
-                "reference": "b550970ce786f532c8cba3414e24aae8ce19f31d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3|^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2016-04-29 12:21:54"
+        },
+        {
+            "name": "pug-php/pug",
+            "version": "1.11.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pug-php/pug.git",
+                "reference": "392261f6951991e964ae33e131b120a3c884f9ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pug-php/pug/zipball/392261f6951991e964ae33e131b120a3c884f9ca",
+                "reference": "392261f6951991e964ae33e131b120a3c884f9ca",
                 "shasum": ""
             },
             "require": {
@@ -81,15 +129,19 @@
                 "pug",
                 "template"
             ],
-            "time": "2016-06-12 09:13:35"
+            "time": "2016-06-25 10:26:44"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "php": 15
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.1@alpha"
+    },
     "platform-dev": []
 }

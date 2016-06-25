@@ -1,0 +1,22 @@
+www:
+  build: images/www
+  tty: true
+  links:
+    - db:mysql
+  volumes:
+    - /Users/emreplt/keepitter:/var/www/html
+  ports:
+    - 8083:80
+    - 9000:9000
+  # command: chmod -R 777 /var/www/html
+db:
+  build: images/db
+  ports:
+    # - 3306
+    - 3307
+  volumes:
+    # - /Users/emreplt/saglayan/wp-data:/var/lib/mysql
+    - /Users/emreplt/keepitter/db-data-backup:/db-data-backup
+  environment:
+    MYSQL_DATABASE: admin
+    MYSQL_ROOT_PASSWORD: admin
