@@ -9,16 +9,17 @@ class app
     $url = explode('/', rtrim($_GET['url'],'/'));
 
     if (empty($url[0])) $url[0]='index';
+
     // print_r($url);
 
     $file = 'controllers/' . $url[0] .'.php';
-    if (file_exists($file)) {
-      require $file;
-    } else {
-      require 'controllers/error.php';
-      $controller = new error();
-      return false;
+
+    if (!file_exists($file)) {
+      $url[0]='error';
+      $file = 'controllers/' . $url[0] .'.php';
     }
+
+    require $file;
 
     $controller = new $url[0];
 
@@ -27,6 +28,8 @@ class app
     } else {
       if (isset($url[1])) {
         $controller->{$url[1]}();
+      } else {
+        $controller->index();
       }
     }
   }

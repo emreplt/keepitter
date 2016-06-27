@@ -8,17 +8,21 @@ class View
 
   function __construct()
   {
-    
+
   }
 
   public function render($name)
   {
-    $pug = new Pug(array(
-      'extension' => '.pug',
-      'prettyprint' => true
-    ));
     $file='views/'.$name.'.pug';
-    return $pug->render($file,array(title=> 'hello world'));
+    if (file_exists($file)) {
+      $pug = new Pug(array(
+        'extension' => '.pug',
+        'prettyprint' => true
+      ));
+      return $pug->render($file,array(title=> 'hello world'));
+    }
+    //
+    // return $pug->render($file,array(title=> 'hello world'));
   }
 }
 

@@ -10,12 +10,12 @@ var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var changed = require('gulp-changed');
 // var jade = require('gulp-jade');
-var jade = require('gulp-jade-php');
+// var jade = require('gulp-jade-php');
 var prettify = require('gulp-html-prettify');
 //var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 // var gulpif = require('gulp-if');
-var data = require('gulp-data');
+// var data = require('gulp-data');
 var autoprefixer = require('gulp-autoprefixer');
 // var changed = require('gulp-changed');
 var coffee = require('gulp-coffee');
@@ -50,19 +50,19 @@ var src = {
   data: srcFolder + '/dummy/db.json',
   constants: srcFolder + '/constants/**/*.*'
 };
-
-var prototypeFolder = './prototype';
-var prototype = {
-  base: prototypeFolder,
-  jsfolder: prototypeFolder + '/js',
-  cssfolder: prototypeFolder + '/css',
-  minCss: 'app.min.css',
-  css: 'app.css',
-  minJs: 'app.min.js',
-  js: 'app.js',
-  decofjs: 'app.decof.js',
-  img: prototypeFolder + '/img'
-};
+// 
+// var prototypeFolder = './prototype';
+// var prototype = {
+//   base: prototypeFolder,
+//   jsfolder: prototypeFolder + '/js',
+//   cssfolder: prototypeFolder + '/css',
+//   minCss: 'app.min.css',
+//   css: 'app.css',
+//   minJs: 'app.min.js',
+//   js: 'app.js',
+//   decofjs: 'app.decof.js',
+//   img: prototypeFolder + '/img'
+// };
 
 
 
@@ -237,6 +237,22 @@ gulp.task('livereload', function() {
     .pipe(watch(src.templates))
     .pipe(watch(src.sass))
     .pipe(livereload());
+
+
+
+  // gulp.watch(src.views, function() {
+  //   livereload();
+  // });
+  // nodemon({
+  //   // the script to run the app
+  //   script: './bin/www'
+  // //  ext: 'js'
+  // }).on('restart', function() {
+  //   // when the app has restarted, run livereload.
+  //   gulp.src('./bin/www')
+  //     .pipe(livereload());
+  //     //.pipe(notify('Reloading page, please wait...'));
+  // });
 });
 
 

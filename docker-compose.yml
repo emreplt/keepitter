@@ -12,11 +12,11 @@ www:
 db:
   build: images/db
   ports:
-    # - 3306
+    - 3318:3306
     - 3307
   volumes:
     # - /Users/emreplt/saglayan/wp-data:/var/lib/mysql
     - /Users/emreplt/keepitter/db-data-backup:/db-data-backup
   environment:
-    MYSQL_DATABASE: admin
+    MYSQL_DATABASE: keepitter
     MYSQL_ROOT_PASSWORD: admin

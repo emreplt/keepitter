@@ -2,7 +2,7 @@
 /**
  *
  */
-class index extends Controller
+class login_model extends model
 {
 
   function __construct()
@@ -10,11 +10,9 @@ class index extends Controller
     parent::__construct();
   }
 
-  function index()
+  public function test()
   {
-    echo $this->view->render('index');
+
   }
 }
-
-
  ?>
