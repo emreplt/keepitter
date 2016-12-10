@@ -2,7 +2,7 @@
 /**
  *
  */
-class model
+class Model
 {
 
   function __construct()

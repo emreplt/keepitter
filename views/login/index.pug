@@ -3,3 +3,13 @@ extends ../layout
 block content
   h1 Here we login
   p blah
+
+  form(method='POST', action='login/run')
+    .form-group
+      label(for="username") username
+      input.form-control(type="input",id="username",placeholder="username",name="username")
+    .form-group
+      label(for="password") password
+      input.form-control(type="password",id="password",placeholder="password",name="password")
+    .form-group
+      button.btn.btn-default(type='submit') Submit

@@ -4,9 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0d5f84c05b4c08b93515a458fe1464ab",
-    "content-hash": "6f9025ced98b816a1cfaf4e48b6a36f3",
+    "hash": "34eb866944b007f0737d14ea6504cb71",
+    "content-hash": "e9849a65e27017470331af7a5bedb227",
     "packages": [
+        {
+            "name": "abraham/twitteroauth",
+            "version": "0.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abraham/twitteroauth.git",
+                "reference": "f7dec715c6e79e6085470b8b5d4dc2727afc5186"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/f7dec715c6e79e6085470b8b5d4dc2727afc5186",
+                "reference": "f7dec715c6e79e6085470b8b5d4dc2727afc5186",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "2.3.*",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abraham\\TwitterOAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am",
+                    "homepage": "https://abrah.am",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
+            "homepage": "https://twitteroauth.com",
+            "keywords": [
+                "Twitter API",
+                "Twitter oAuth",
+                "api",
+                "oauth",
+                "rest",
+                "social",
+                "twitter"
+            ],
+            "time": "2016-04-20 23:23:26"
+        },
         {
             "name": "fzaninotto/faker",
             "version": "v1.6.0",
@@ -57,16 +111,16 @@
         },
         {
             "name": "pug-php/pug",
-            "version": "1.11.2",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pug-php/pug.git",
-                "reference": "392261f6951991e964ae33e131b120a3c884f9ca"
+                "reference": "b85ef9557b6c7e97614912249807ccfebdd3f9df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pug-php/pug/zipball/392261f6951991e964ae33e131b120a3c884f9ca",
-                "reference": "392261f6951991e964ae33e131b120a3c884f9ca",
+                "url": "https://api.github.com/repos/pug-php/pug/zipball/b85ef9557b6c7e97614912249807ccfebdd3f9df",
+                "reference": "b85ef9557b6c7e97614912249807ccfebdd3f9df",
                 "shasum": ""
             },
             "require": {
@@ -129,7 +183,7 @@
                 "pug",
                 "template"
             ],
-            "time": "2016-06-25 10:26:44"
+            "time": "2016-07-09 16:02:13"
         }
     ],
     "packages-dev": [],

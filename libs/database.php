@@ -8,7 +8,8 @@ class Database extends PDO
 
   function __construct()
   {
-    parent::__construct('mysql: host=db;dbname=keepitter', 'root', 'admin');
+    $mydb=getenv("MYSQL_PORT_3306_TCP_ADDR");
+    parent::__construct('mysql:host='.$mydb.';dbname=keepitter', 'root', 'admin');
   }
 }
 

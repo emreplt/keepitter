@@ -1,12 +1,12 @@
 <?php   /**
  *
  */
-class help_Model extends Model
+class help_model extends Model
 {
 
   function __construct()
   {
-    echo 'help model!';
+    parent::__construct();
   }
 
   function blah()

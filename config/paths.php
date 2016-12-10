@@ -1,2 +1,3 @@
 <?php
-define('URL', 'http://dockermachine:8083/'); ?>
+define('URL', 'http://dockermachine:8083/');
+?>

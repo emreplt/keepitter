@@ -19,10 +19,8 @@ class View
         'extension' => '.pug',
         'prettyprint' => true
       ));
-      return $pug->render($file,array(title=> 'hello world'));
+      return $pug->render($file);
     }
-    //
-    // return $pug->render($file,array(title=> 'hello world'));
   }
 }
 

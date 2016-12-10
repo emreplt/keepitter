@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1 Create Your Account
+  p Create account to keep tweets
+  .row
+    .col-sm-6
+      h3 Use your social accounts
+    .col-sm-6
+      h3 Create a local account
+      form(method='POST', action='#{globalurl}/login/create')
+        .form-group
+          label(for="username") username
+          input.form-control(type="input",id="username",placeholder="username",name="username")
+        .form-group
+          label(for="password") password
+          input.form-control(type="password",id="password",placeholder="password",name="password")
+        .form-group
+          label(for="password2") password again
+          input.form-control(type="password",id="password2",placeholder="password again",name="password2")
+        .form-group
+          label(for="name") name
+          input.form-control(type="input",id="name",placeholder="your name",name="name")
+        .form-group
+          button.btn.btn-default(type='submit') Submit

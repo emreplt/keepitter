@@ -4,7 +4,8 @@
     "require": {
         "pug-php/pug": "^1.11",
         "php": "^7.1@alpha",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "abraham/twitteroauth": "^0.6.4"
     },
     "authors": [
         {
