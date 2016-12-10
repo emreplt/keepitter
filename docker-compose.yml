@@ -4,7 +4,7 @@ www:
   links:
     - db:mysql
   volumes:
-    - /Users/emreplt/keepitter:/var/www/html
+    - /Users/emreplt/keepitter/web:/var/www/html
   ports:
     - 8083:80
     - 9000:9000
