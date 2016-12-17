@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PhantomInstaller\\Test\\' => array($vendorDir . '/jakoch/phantomjs-installer/tests'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Abraham\\TwitterOAuth\\' => array($vendorDir . '/abraham/twitteroauth/src'),
 );

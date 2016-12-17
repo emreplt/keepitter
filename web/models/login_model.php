@@ -5,25 +5,9 @@
 use Abraham\TwitterOAuth\TwitterOAuth;
 class login_model extends Model
 {
-
   function __construct()
   {
     parent::__construct();
-  }
-
-  public function run()
-  {
-    $que=$this->db->prepare("SELECT id FROM users WHERE username=:username AND password=:password");
-    $que->execute(array(
-      ':username'=>$_POST['username'],
-      ':password'=>$_POST['password']
-    ));
-    if ($que->rowCount()>0) {
-      session::set('loggedIn',true);
-      header('location: /profile');
-    } else {
-      header('location: /login');
-    }
   }
 
   public function authorize()
@@ -39,7 +23,7 @@ class login_model extends Model
     session::init();
     session::set('tw_oauth_token',$request_token['oauth_token']);
     session::set('tw_oauth_token_secret',$request_token['oauth_token_secret']);
-    session::set('dede','sasdasd');
+    // session::set('dede','sasdasd');
 
     $url = $twitteroauth->url(
       'oauth/authorize', array('oauth_token' => $request_token['oauth_token'])
@@ -75,14 +59,26 @@ class login_model extends Model
     // request user token
     $token = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
 
-    $twitter = new TwitterOAuth(
-      tw_consumer_key,
-      tw_consumer_secret,
-      $token['oauth_token'],
-      $token['oauth_token_secret']
-    );
+    // session::set('tw_token',$token);
 
-    print_r($token);
+    auth::setLogin($token, true);
+    session::remove('tw_oauth_token');
+    session::remove('tw_oauth_token_secret');
+    header('Location: /');
+    //
+    //
+    // $twitter = new TwitterOAuth(
+    //   tw_consumer_key,
+    //   tw_consumer_secret,
+    //   $token['oauth_token'],
+    //   $token['oauth_token_secret']
+    // );
+    //
+    // print_r($token);
+    //
+    // $result = $twitter->get('users/show', array('user_id'=>$token['user_id']));
+    //
+    // print_r($result);
     //
     // $status = $twitter->post(
     //   "statuses/update", [
@@ -91,11 +87,6 @@ class login_model extends Model
     // );
     //
     // echo ('Created new status with #' . $status->id . PHP_EOL);
-  }
-
-  public function create()
-  {
-
   }
 }
  ?>

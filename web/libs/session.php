@@ -14,6 +14,9 @@ class session
   public static function get($key){
     return $_SESSION[$key];
   }
+  public static function remove($key){
+    unset($_SESSION[$key]);
+  }
   public static function destroy()
   {
     session_destroy();

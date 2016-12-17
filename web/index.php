@@ -21,6 +21,7 @@ require 'libs/controller.php';
  */
 require 'libs/database.php';
 require 'libs/session.php';
+require 'libs/auth.php';
 
 /*
  * require configs
@@ -29,4 +30,4 @@ require 'config/paths.php';
 require 'config/twitter.php';
 
 $appim = new app();
- ?>
+?>

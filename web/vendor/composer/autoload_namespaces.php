@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Pug\\' => array($vendorDir . '/pug-php/pug/src'),
-    'Jade\\' => array($vendorDir . '/pug-php/pug/src'),
+    'PhantomInstaller\\' => array($vendorDir . '/jakoch/phantomjs-installer/src'),
 );

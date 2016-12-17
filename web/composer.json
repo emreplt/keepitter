@@ -2,15 +2,24 @@
     "name": "emreplt/keepitter",
     "description": "keep tweets forever",
     "require": {
-        "pug-php/pug": "^1.11",
         "php": "^7.1@alpha",
         "fzaninotto/faker": "^1.6",
-        "abraham/twitteroauth": "^0.6.4"
+        "abraham/twitteroauth": "^0.6.4",
+        "jakoch/phantomjs-installer": "^2.1"
     },
-    "authors": [
-        {
-            "name": "Emre Polat",
-            "email": "emreplt@gmail.com"
-        }
-    ]
+    "config": {
+        "bin-dir": "bin"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    },
+    "authors": [{
+        "name": "Emre Polat",
+        "email": "emreplt@gmail.com"
+    }]
 }

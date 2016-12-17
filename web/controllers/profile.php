@@ -5,15 +5,11 @@
  */
 class profile extends Controller
 {
-
   function __construct()
   {
     parent::__construct();
-    session::init();
-    $loggedIn = session::get('loggedIn');
-    if (!$loggedIn) {
-      session::destroy();
-      header('location: login');
+    if (!auth::isauth()) {
+      header('location: login/oauth');
       exit;
     }
 
@@ -22,6 +18,12 @@ class profile extends Controller
   function index()
   {
     echo $this->view->render('profile/index');
+  }
+
+  function kill()
+  {
+    auth::kill();
+    header('location: /');
   }
 }
 

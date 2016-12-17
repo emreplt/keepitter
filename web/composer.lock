@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "34eb866944b007f0737d14ea6504cb71",
-    "content-hash": "e9849a65e27017470331af7a5bedb227",
+    "hash": "0eea74c0a42aa6be2167e782dcc6a12f",
+    "content-hash": "713adacf138f7154dc7e55bf54b49497",
     "packages": [
         {
             "name": "abraham/twitteroauth",
-            "version": "0.6.4",
+            "version": "0.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/abraham/twitteroauth.git",
-                "reference": "f7dec715c6e79e6085470b8b5d4dc2727afc5186"
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/f7dec715c6e79e6085470b8b5d4dc2727afc5186",
-                "reference": "f7dec715c6e79e6085470b8b5d4dc2727afc5186",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/fc0766220c79087ac8178625d34e88ca29160d5b",
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "social",
                 "twitter"
             ],
-            "time": "2016-04-20 23:23:26"
+            "time": "2016-10-10 14:20:30"
         },
         {
             "name": "fzaninotto/faker",
@@ -110,34 +110,35 @@
             "time": "2016-04-29 12:21:54"
         },
         {
-            "name": "pug-php/pug",
-            "version": "1.13.0",
+            "name": "jakoch/phantomjs-installer",
+            "version": "2.1.1-p07",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pug-php/pug.git",
-                "reference": "b85ef9557b6c7e97614912249807ccfebdd3f9df"
+                "url": "https://github.com/jakoch/phantomjs-installer.git",
+                "reference": "4d0e994f110a79738b73083c2c3086d162547bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pug-php/pug/zipball/b85ef9557b6c7e97614912249807ccfebdd3f9df",
-                "reference": "b85ef9557b6c7e97614912249807ccfebdd3f9df",
+                "url": "https://api.github.com/repos/jakoch/phantomjs-installer/zipball/4d0e994f110a79738b73083c2c3086d162547bd6",
+                "reference": "4d0e994f110a79738b73083c2c3086d162547bd6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
-            },
-            "replace": {
-                "kylekatarnls/jade-php": "self.version"
+                "ext-bz2": "*",
+                "ext-openssl": "*",
+                "php": ">5.3"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": ">=4.0"
+                "composer/composer": "^1.2",
+                "phpunit/phpunit": "^4.8"
             },
-            "type": "library",
+            "type": "custom-installer",
             "autoload": {
+                "psr-4": {
+                    "PhantomInstaller\\Test\\": "tests/"
+                },
                 "psr-0": {
-                    "Pug\\": "src/",
-                    "Jade\\": "src/"
+                    "PhantomInstaller\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -146,44 +147,17 @@
             ],
             "authors": [
                 {
-                    "name": "Konstantin Kudryasho",
-                    "email": "konstantin.kudryashov@knplabs.com",
-                    "homepage": "http://about.me/everzet",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Janez Troha",
-                    "email": "janez.troha@gmail.com",
-                    "homepage": "http://flavors.me/dz0ny",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Luke GB",
-                    "email": "git@lukegb.com",
-                    "homepage": "http://twitter.com/lukegb",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Ronan Tessier",
-                    "email": "ronan.tessier@vaconsulting.lu",
-                    "homepage": "http://github.com/ronan-gloo",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "kylekatarnls",
-                    "homepage": "http://github.com/kylekatarnls",
-                    "role": "Maintainer"
+                    "name": "Jens-André Koch",
+                    "email": "jakoch@web.de"
                 }
             ],
-            "description": "HAML-like template engine for PHP 5.3",
-            "homepage": "https://github.com/pug-php/pug",
+            "description": "A Composer package which installs the PhantomJS binary (Linux, Windows, Mac) into `/bin` of your project.",
             "keywords": [
-                "jade",
-                "minification",
-                "pug",
-                "template"
+                "binaries",
+                "headless",
+                "phantomjs"
             ],
-            "time": "2016-07-09 16:02:13"
+            "time": "2016-10-12 01:52:42"
         }
     ],
     "packages-dev": [],

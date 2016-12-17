@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit14b69860880782bd549413663163f35b
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PhantomInstaller\\Test\\' => 22,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -18,6 +22,10 @@ class ComposerStaticInit14b69860880782bd549413663163f35b
     );
 
     public static $prefixDirsPsr4 = array (
+        'PhantomInstaller\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakoch/phantomjs-installer/tests',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -31,16 +39,9 @@ class ComposerStaticInit14b69860880782bd549413663163f35b
     public static $prefixesPsr0 = array (
         'P' => 
         array (
-            'Pug\\' => 
+            'PhantomInstaller\\' => 
             array (
-                0 => __DIR__ . '/..' . '/pug-php/pug/src',
-            ),
-        ),
-        'J' => 
-        array (
-            'Jade\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/pug-php/pug/src',
+                0 => __DIR__ . '/..' . '/jakoch/phantomjs-installer/src',
             ),
         ),
     );

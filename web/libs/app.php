@@ -6,11 +6,23 @@ class app
 {
   function __construct()
   {
-    $url = explode('/', rtrim($_GET['url'],'/'));
+    $url = explode('/', filter_var(rtrim($_GET['url'],'/'), FILTER_SANITIZE_URL));  //PARSE URL ! ! !
+    if (empty($url[0])) $url[0]='index';  // NO CONTROLLER -> GO TO INDEX
 
-    if (empty($url[0])) $url[0]='index';
-
-    // print_r($url);
+    /*
+     * exceptions for goodness
+     */
+    if ($url[0]==='insert') {
+      $url[0]='tweet';
+      $url[1]='insert';
+    }
+    if ($url[1]==='status') {
+      $url[0]='tweet';
+      $url[1]='show';
+    }
+    if ($url[0]==='me') {
+      $url[0]='profile';
+    }
 
     $file = 'controllers/' . $url[0] .'.php';
 
