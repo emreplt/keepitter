@@ -1,0 +1,20 @@
+body {
+  background-color: snow;
+}
+
+a {
+  color: #00B7FF;
+}
+
+twitterwidget.twitter-tweet {
+  box-shadow: 1px 1px 13px 0px #000;
+}
+
+blockquote.twitter-tweet {
+  display: none;
+}
+
+.panelerror {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

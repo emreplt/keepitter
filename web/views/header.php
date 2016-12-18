@@ -10,6 +10,9 @@
     <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css'>
     <link rel='stylesheet' href='/bower_components/bootstrap-social/bootstrap-social.css'>
     <link rel='stylesheet' href='/bower_components/font-awesome/css/font-awesome.min.css'>
+    <script src='/bower_components/jquery/dist/jquery.js'></script>
+    <script src='/bower_components/bootstrap/dist/js/bootstrap.js'></script>
+    <link rel='stylesheet' href='/public/css/app.css'>
     <style>
     a#profiler:before {
       background-repeat: no-repeat;

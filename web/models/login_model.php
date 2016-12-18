@@ -61,7 +61,7 @@ class login_model extends Model
 
     // session::set('tw_token',$token);
 
-    auth::setLogin($token, true);
+    auth::setLogin($token, true, $db=$this->db);
     session::remove('tw_oauth_token');
     session::remove('tw_oauth_token_secret');
     header('Location: /');

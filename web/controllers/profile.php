@@ -9,18 +9,17 @@ class profile extends Controller
   {
     parent::__construct();
     if (!auth::isauth()) {
-      header('location: login/oauth');
+      header('location: login/authorize');
       exit;
     }
-
   }
 
-  function index()
+  function get_index()
   {
     echo $this->view->render('profile/index');
   }
 
-  function kill()
+  function get_kill()
   {
     auth::kill();
     header('location: /');

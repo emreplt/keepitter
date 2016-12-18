@@ -12,11 +12,9 @@ class tweet_model extends Model
     parent::__construct();
   }
 
-  public function insert()
+  public function insert($tweet)
   {
-    $url = explode('/', ltrim(parse_url($_POST['permalink'], PHP_URL_PATH),'/'));
-    $tweet_author = $url[0];
-    $tweet_id =$url[2];
+
     //
 		// $sth = $this->db->prepare('INSERT INTO data (text) VALUES (:text)');
 		// $sth->execute(array(':text' => $text));
@@ -24,14 +22,39 @@ class tweet_model extends Model
 		// $data = array('text' => $text, 'id' => $this->db->lastInsertId());
 		// echo json_encode($data);
 
+    $tweetdata = [];
 
-    $sth=$this->db->prepare('INSERT INTO tweet (tweet_id,tweet_author) VALUES (:tweet_id, :tweet_author)');
+    $url = explode('/', ltrim(parse_url($tweet->url, PHP_URL_PATH),'/'));
+    $tweetdata['tweet_id'] =$url[2];
+    $tweetdata['tweet_author_name'] = $url[0];
+    $tweetdata['tweet_author_screen_name']=$tweet->author_name;
+    $tweetdata['tweet_embed_html']=$tweet->html;
+
+    // echo "<xmp>";
+    // print_r($tweetdata);
+    // echo "</xmp>";
+    $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sth=$this->db->prepare('INSERT INTO tweet (
+      tweet_id,
+      tweet_author_name,
+      tweet_author_screen_name,
+      tweet_embed_html
+    ) VALUES
+      (
+        :tweet_id,
+        :tweet_author_name,
+        :tweet_author_screen_name,
+        :tweet_embed_html
+      )');
     $sth->execute(array(
-      ':tweet_id'=>$tweet_id,
-      ':tweet_author'=>$tweet_author
+      ':tweet_id'=>$tweetdata['tweet_id'],
+      ':tweet_author_name'=>$tweetdata['tweet_author_name'],
+      ':tweet_author_screen_name'=>$tweetdata['tweet_author_screen_name'],
+      ':tweet_embed_html'=>base64_encode($tweetdata['tweet_embed_html'])
     ));
-    header('location: /'. $tweet_author . '/status/'. $tweet_id .'?id='.$this->db->lastInsertId());
-
+    return $tweetdata['tweet_author_name'] . '/status/'. $tweetdata['tweet_id'];
+    // header('location: /'. );
     // if ($que->rowCount()>0) {
     //
     //
@@ -47,6 +70,15 @@ class tweet_model extends Model
       WHERE tweet_id=:tweet_id;
     ');
     $res->execute(array(':tweet_id' => $id));
+    return $res->fetchAll();
+  }
+
+  public function get_last_5()
+  {
+    $res=$this->db->prepare('
+    select * from tweet order by date desc limit 5 ;
+    ');
+    $res->execute();
     return $res->fetchAll();
   }
 }

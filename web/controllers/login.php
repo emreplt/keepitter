@@ -10,12 +10,12 @@ class login extends Controller
     parent::__construct();
   }
 
-  function authorize()
+  function get_authorize()
   {
     $this->model->authorize();
   }
 
-  function callback()
+  function get_callback()
   {
     $this->model->callback();
   }

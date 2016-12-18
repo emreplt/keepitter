@@ -50,7 +50,7 @@ var src = {
   data: srcFolder + '/dummy/db.json',
   constants: srcFolder + '/constants/**/*.*'
 };
-// 
+//
 // var prototypeFolder = './prototype';
 // var prototype = {
 //   base: prototypeFolder,
@@ -221,7 +221,7 @@ gulp.task('watch', function() {
 gulp.task('liverefresh', function() {
   'use strict';
   // gulp.watch(src.templates, ['jade', 'livereload']);
-  gulp.watch(src.coffee, ['coffee', 'livereload']);
+  // gulp.watch(src.coffee, ['coffee', 'livereload']);
   gulp.watch(src.sass, ['sass', 'livereload']);
   // gulp.watch(src.lib, ['libchanged', 'livereload']);
   // gulp.watch(src.constants, ['constantscopy', 'livereload']);

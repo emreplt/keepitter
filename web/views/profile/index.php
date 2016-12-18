@@ -2,25 +2,18 @@
   <h1><?php echo auth::getuser()['name']; ?></h1>
   <p>twitter'la irtibatlı hesabın</p>
   <br>
-  <?php
-  // $twitter = auth::getTwitter();
-  // $content = $twitter->get('account/verify_credentials');
+  <h1>keeps</h1>
+  <pre><?php
 
-   ?>
+  // print_r(twitter::gettwitter());
+  // $twitter = twitter::gettwitter();
+  // print_r($twitter->get('account/verify_credentials'));
+   ?></pre>
+   <hr>
    <pre>
 
-     <?php var_dump($_SESSION); ?>
+     <?php print_r($_SESSION); ?>
 
    </pre>
-  <pre>
-
-    <?php //print_r($content); ?>
-
-  </pre>
-  <hr>
-  <pre>
-    <?php //print_r($twitter); ?>
-  </pre>
-
 
 </div>

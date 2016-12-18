@@ -22,6 +22,7 @@ require 'libs/controller.php';
 require 'libs/database.php';
 require 'libs/session.php';
 require 'libs/auth.php';
+require 'libs/twitter.php';
 
 /*
  * require configs

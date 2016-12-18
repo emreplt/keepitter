@@ -48,7 +48,15 @@ class auth extends session
     return session::get('auth')['twitter'];
   }
 
-  public static function setLogin($token, $isadmin=false)
+
+  public static function tw_token()
+  {
+    return session::get('auth')['tw_token'];
+  }
+
+
+
+  public static function setLogin($token, $isadmin=false, $db)
   {
     $_auth['tw_token']=$token;
     $twitter=new TwitterOAuth(
@@ -65,11 +73,42 @@ class auth extends session
       'location'=>$response->location,
       'time_zone'=>$response->time_zone,
       'verified'=>$response->verified,
-      'profile_image_url'=>$response->profile_image_url
+      'profile_image_url'=>$response->profile_image_url,
+      'lang'=>$response->lang
     );
     $_auth['user']=$user;
-    $_auth['twitter']=$twitter;
-    $_auth['isadmin']=$isadmin;
+
+    $_auth['isadmin'] = $user['id']===83455478;
+
+    // $_auth['twitter']=$twitter;
+
+    $sth=$db->prepare('INSERT INTO login
+      (
+        twitter_id,
+        twitter_name,
+        twitter_screen_name,
+        twitter_location,
+        twitter_time_zone,
+        twitter_lang
+      )
+        VALUES
+        (
+          :twitter_id,
+          :twitter_name,
+          :twitter_screen_name,
+          :twitter_location,
+          :twitter_time_zone,
+          :twitter_lang
+        )');
+    $sth->execute(array(
+      ':twitter_id'=>$user['id'],
+      ':twitter_name'=>$user['name'],
+      ':twitter_screen_name'=>$user['screen_name'],
+      ':twitter_location'=>$user['location'],
+      ':twitter_time_zone'=>$user['time_zone'],
+      ':twitter_lang'=>$user['lang']
+    ));
+    $_auth['login_id']=$db->lastInsertId();
     session::set('auth',$_auth);
   }
 
